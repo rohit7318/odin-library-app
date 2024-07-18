@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Library app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="brand">Rohit's Library</h1>
+            <div>
+                <button id="completedBooks">Completed Books</button>
+                <button id="unreadBooks">Unread Books</button>
+                <button id="allBooks">All Books</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+           <button id="addBook">Add New Book</button>
+           <div class="books-container">
+
+           </div>
+        </div>
+    </main>
+
+    <div class="form">
+   
+        <button id="closeButton">X</button>
+        <div>
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" placeholder="Book Title" maxlength="50">
+        </div>
+        <div>
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author" placeholder="Author Name" maxlength="50">
+        </div>
+        <div>
+            <label for="pages">Total Pages</label>
+            <input type="number" id="pages" name="pages" placeholder="Total Pages" maxlength="50">
+        </div>
+
+        <div id="checkboxContainer">
+            <label for="checkbox">check the box if you read this book  </label>
+            <input type="checkbox" name="checkbox" id="checkbox">
+        </div>
+
+        <div>
+            <button id="submitButton">Submit</button>
+        </div>
+
+    </div>
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
