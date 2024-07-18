@@ -1,0 +1,395 @@
+:root
+{
+    --form-submit-button-dark-bg:#0e1217;
+    --form-submit-button-dark-bg:black;
+    --body-light-bg:#1c1f26;
+    --text-color:#ffffff;
+    --header-bg:seagreen;
+    --input-text-color:green;
+    --header-button-text-color:rgb(3, 49, 23);
+    --input-active-border-color:rgb(33, 117, 69);
+    --close-button-bg:rgba(255, 0, 0, 0.616);
+    --main-bg:rgba(46, 139, 86, 0.613);
+}
+
+
+*
+{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+}
+
+
+
+button:hover
+{
+    cursor:  pointer !important;
+}
+
+/* global */
+.container 
+{
+    width: 75%;
+    margin: 0 auto;
+}
+
+body
+{
+    width:100%;
+    min-height:100vh;
+    position:relative;
+    background-color: var(--body-light-bg);
+    
+}
+
+header
+{
+    width: 100%;
+    height: 10vh;
+    background-color: var(--header-bg);
+}
+
+header .container 
+{
+    width: 75%;
+    margin: 0 auto;
+    height: 100%;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    
+}
+
+header .container h1
+{
+    font-size: xx-large;
+    color: white;
+    font-weight: bold;
+
+}
+
+header .container div 
+{
+    display: flex;
+    column-gap: 1rem;
+}
+
+header .container div button 
+{
+    padding: 1.5vh 1vw;
+    color: var(--header-button-text-color);
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+}
+
+
+
+.buttonActive
+{
+    cursor: pointer !important;
+    background-color: black !important;
+    color:var(--text-color) !important;
+    box-shadow: 2px 15px 32px rgba(0, 0, 0, 0.6);
+}
+
+
+
+/* main */
+main 
+{
+    width: 100%;
+    min-height: calc(100vh - 10vh);
+    background-color: var(--main-bg);
+    padding-top: 1rem;
+    transition: filter 0.3s ease;
+}
+
+
+main.blur
+{
+    filter: blur(15px);
+}
+
+
+main .container #addBook
+{
+    padding: 2vh 1.5vw;
+    border: 1px solid var(--text-color);
+    background-color: var(--header-bg);
+    color: #fff;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 10px;
+
+}
+
+
+
+
+.books-container
+{
+    width: 100%;
+    height: auto;
+    color: var(--text-color);
+
+    display: flex;
+    
+    flex-wrap: wrap;
+    flex: 1;
+    margin-top: 1rem;    
+    gap: 1rem;
+    padding: 2vh 0;
+}
+
+.books-container .book 
+{
+    min-width: 250px;
+    max-width: 300px;
+    height: auto;
+    background-color: var(--header-bg);
+    padding: 2vh 1.5vw; 
+    border-radius: 10px;
+    border: 2px solid var(--text-color);
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem; 
+    transition: box-shadow 0.6s ease;
+    box-shadow: 5px 20px 60px rgba(0, 0, 0, 0.6);
+
+}
+
+
+
+
+
+
+
+.book div  button
+{
+    padding: 1.5vh 1vw;
+    font-size: larger;
+    margin-top: .5rem;
+}
+
+.book h2.heading 
+{
+    text-transform: capitalize;
+    word-wrap: break-word;
+    white-space:wrap;
+}
+
+
+.book button.removeBook 
+{
+    font-size: large;
+    width: fit-content;
+    padding: 1.5vh 1vw;
+    border-radius: 4px;
+    border: 2px solid var(--text-color);
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.5);
+}
+
+.book div button.status 
+{
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+}
+
+.book div button.status.read
+{
+    color: var(--text-color);
+}
+.book div button.status.unread
+{
+   
+    background-color: var(--text-color);
+    color: black;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+
+
+/* form */
+
+div.form
+{
+    position:absolute;
+    bottom: 0;
+    height: 0;
+    display: none;
+    border-radius: 10px;
+    min-height: fit-content;
+    transition: transform 0.5s ease;
+    
+}
+
+div.form #closeButton 
+{
+    position:absolute;
+    right: 1.5vw;
+    top: 1.2vh;
+    padding: 1vh 1vw;
+
+    background-color: var(--close-button-bg);
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    transition: transform 0.2s linear;
+
+    
+}
+
+div.form #closeButton:hover
+{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+div.form.active
+{ 
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+
+    height: auto;
+    max-width: fit-content;
+
+    padding: 2vh 1.5vw;
+    padding-top: 4vh;
+    border: 2px solid var(--text-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+
+
+div.form.active div 
+{
+    display: flex;
+    flex-direction: column;
+    row-gap: .3rem;
+}
+
+div.form.active div label 
+{
+    font-size: 1.2rem;
+    color: var(--text-color);
+    
+} 
+
+
+
+div.form.active div input 
+{
+    height: 6vh;
+    padding-left: .8rem;
+    border-radius: 5px;
+    border: none;
+    font-size: large;
+    color: var(--input-text-color);
+
+}
+
+div.form.active div input:active,div.form.active div input:focus
+{
+    outline: 0;
+    border: 3px solid var(--input-active-border-color);
+}
+
+div.form.active #checkboxContainer 
+{
+    
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+    align-items: center;
+}
+
+div.form #submitButton 
+{
+    width: fit-content;
+    padding: 1.5vh 2vw;
+    margin: 0 auto;
+    font-size: large;
+    border-radius: 5px;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    background-color: var(--form-submit-button-dark-bg);
+}
+
+
+@media screen and (min-width:340) and (max-width:700px)
+{
+    header .container
+    {
+        width: 90%;
+    }
+    header ul 
+    {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+    }
+
+    main .container 
+    {
+        width: 95%;
+    }
+    .books-container
+    {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .books-container .book 
+    {
+        width: 100%;
+        padding: 2vh 5vw;
+    }
+
+    .book .changeStatus
+    {
+        border-radius: 5px;
+        padding: 1.5vh 2vw;
+    }
+    
+}
+
+
+@media screen and (min-width:701px) and (max-width:800px)
+{
+
+    .book .changeStatus
+    {
+        border-radius: 5px;
+    }
+    
+}
+
+@media screen and (min-width:0) and (max-width:339px) 
+{
+    header .container 
+    {
+        margin: 0 auto;
+        width: 98%;
+    }
+    
+    header .container div
+    {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 0;
+    }
+}
